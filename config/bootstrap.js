@@ -16,15 +16,15 @@ module.exports.bootstrap = async function(done) {
   // For example:
   // ```
   // // Set up fake development data (or if we already have some, avast)
-  // if (await User.count() > 0) {
-  //   return done();
-  // }
-  //
-  // await User.createEach([
-  //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
-  //   { emailAddress: 'rachael@example.com', fullName: 'Rachael Shaw', },
-  //   // etc.
-  // ]);
+   if (await Person.count() > 0) {
+     return done();
+   }
+  
+   await Person.createEach([
+    { name: "Martin Choy", age: 23 },
+    { name: "Kenny Cheng", age: 22 }
+    // etc.
+  ]);
   // ```
 
   // Don't forget to trigger `done()` when this bootstrap function's logic is finished.
