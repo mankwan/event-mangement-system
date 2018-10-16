@@ -91,5 +91,30 @@ module.exports = {
 
         }
     },
+
+    // search function
+    search: async function (req, res) {
+
+        const qName = req.query.name || "";
+        const qAge = parseInt(req.query.age);
+
+        if (isNaN(qAge)) {
+
+            var models = await Person.find({
+                where: { name: { contains: qName } },
+                sort: 'name'
+            });
+
+        } else {
+
+            var models = await Person.find({
+                where: { name: { contains: qName }, age: qAge },
+                sort: 'name'
+            });
+
+        }
+
+        return res.view('person/index', { persons: models });
+    },
 };
 
