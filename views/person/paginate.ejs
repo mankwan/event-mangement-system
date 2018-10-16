@@ -1,0 +1,26 @@
+<!--paginate.ejs-->
+<table class="table">
+    <% persons.forEach( function(model) { %>
+        <tr><td><%= model.name %></td><td><%= model.age %></td></tr>
+    <% }); %>
+</table>
+
+<% const current = parseInt(req.query.page) || 1; %>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="/person/paginate/?page=<%= Math.max(current-1, 1) %>">Previous</a>
+        </li>
+
+        <% for (i = 1; i <= count; i++) { %>
+            <li class="page-item">
+                <a class="page-link" href="/person/paginate/?page=<%= i %>"><%= i %></a>
+            </li>
+        <% } %>
+
+        <li class="page-item">
+            <a class="page-link" href="/person/paginate/?page=<%= Math.min(current+1, count) %>">Next</a>
+        </li>
+    </ul>
+</nav>
