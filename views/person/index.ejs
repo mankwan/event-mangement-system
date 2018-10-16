@@ -1,0 +1,6 @@
+<!--index.ejs-->
+<table class="table">
+    <% persons.forEach( function(model) { %>
+        <tr><td><%= model.name %></td><td><%= model.age %></td></tr>
+    <% }); %>
+</table>

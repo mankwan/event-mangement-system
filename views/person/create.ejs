@@ -1,0 +1,12 @@
+<!--create.ejs-->
+<form action="/person/create" method="POST">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="Person[name]" required>
+    </div>
+    <div class="form-group">
+        <label>Age</label>
+        <input type="number" class="form-control" name="Person[age]" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,8 @@
+<%= person.name %>
+<%= person.age %>
+<%= person.id %>
+<br>
+
+<form action="/person/delete/<%= person.id %>" method="POST">
+    <button class="btn btn-warning" type="submit">Delete</button>
+</form>
