@@ -1,4 +1,4 @@
-# lab-4
+# Event management-system
 
 a [Sails v1](https://sailsjs.com) application
 
